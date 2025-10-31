@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class XorEncryptDecrypt {
     
-    // XOR Encryption and Decryption function
+   
     static String xorEncryptDecrypt(String text, char key) {
         StringBuilder output = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
-            char ch = (char)(text.charAt(i) ^ key);  // XOR each character
+            char ch = (char)(text.charAt(i) ^ key);  
             output.append(ch);
         }
         return output.toString();
@@ -36,3 +36,4 @@ public class XorEncryptDecrypt {
         sc.close();
     }
 }
+
