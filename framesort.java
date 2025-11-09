@@ -29,7 +29,18 @@ public class FrameSorting {
             buffer[i] = new Frame(seq, data);
         }
 
-        Arrays.sort(buffer, Comparator.comparingInt(f -> f.seqNo));
+        // Arrays.sort(buffer, Comparator.comparingInt(f -> f.seqNo));
+         for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (buffer[j].seqNo > buffer[j + 1].seqNo) {
+                    // swap frames
+                    Frame temp = buffer[j];
+                    buffer[j] = buffer[j + 1];
+                    buffer[j + 1] = temp;
+                }
+            }
+        }
+
 
         System.out.println("\nFrames sorted by sequence number:");
         for (Frame f : buffer) {
